@@ -1,0 +1,13 @@
+Playbook Review
+
+Installing Security Updates:
+This task installs the latest versions of openssl and openssh, which are critical security packages. Using ignore_errors: yes ensures that even if one package fails to update, the playbook continues.
+
+Checking Docker Installation:
+The task checks if Docker is installed by running docker --version. The ignore_errors: yes ensures that the playbook doesn't fail if Docker is not installed.
+
+Debugging Output:
+The debug task prints the result of the Docker version check, which is useful for troubleshooting.
+
+Installing Docker Conditionally:
+Docker is installed only if the docker --version command failed, which indicates Docker is not installed.
